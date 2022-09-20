@@ -482,5 +482,13 @@ if (game.ask("drink iced tea", "wolk 10 miles")) {
     game.showLongText("The dinosaur says: give me some thing", DialogLayout.Bottom)
     if (game.ask("Give dinosaur 2$", "Give dinosaur iced tea")) {
         gameover("The dinosaur eats you")
+    } else {
+        game.showLongText("The dinosaur drink iced tea ", DialogLayout.Bottom)
+        if (game.ask("It tast good?", "The iced tea is out of date ")) {
+            game.showLongText("The dinosaur drink iced tea and leave", DialogLayout.Bottom)
+            game.over(true)
+        } else {
+            gameover("dinosaur eats you")
+        }
     }
 }
